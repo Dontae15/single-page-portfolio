@@ -1,0 +1,30 @@
+@use '../abstracts/helpers' as *;
+
+.text-preset-1 {
+    @include text($color: black, $font-size: $fs-56px, $font-weight: $fw-700);
+    text-align: center;
+}
+
+.text-preset-2 {
+    @include text($color: $black, $font-size: $fs-40px, $font-weight: $fw-700);
+}
+
+.consultation .text-preset-2 {
+    color: $light-cream;
+}
+
+.text-preset-3 {
+    @include text($color: $light-cream, $font-size: $fs-24px, $font-weight: $fw-700);
+}
+
+.text-preset-4 {
+    @include text($color: $medium-brown, $font-size: $fs-18px, $font-weight: $fw-500, $line-height: 28px);
+}
+
+.consultation .text-preset-4 {
+    color: $light-cream;
+}
+
+.text-preset-5 {
+    @include text($color: $light-cream, $font-size: $fs-16px, $font-weight: $fw-700, $line-height: 28px);
+}

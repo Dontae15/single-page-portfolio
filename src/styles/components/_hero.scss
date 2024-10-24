@@ -1,0 +1,217 @@
+@use '../abstracts/helpers' as *;
+
+.header {
+    @include container($max-width: 1111px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+}
+
+.header button {
+    @include button($background-color: $black, $padding: 0.875rem 2.8125rem, $border-radius: 28px);
+}
+
+.header button:hover {
+    background-color: $galactic-blue;
+    cursor: pointer;
+}
+
+.hero-text {
+    @include container($max-width: 751px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 1.5rem);
+}
+
+.hero-text p {
+    text-align: center;
+    max-width: 700px;
+}
+
+.hero-grid {
+    @include container($max-width: 1111px, $margin: 0 auto);
+    @include grid($grid-template-columns: repeat(12, 1fr), $grid-gap: 1.5rem);
+}
+
+.hero-grid div {
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: space-between);
+}
+
+.hero-grid img {
+    margin-left: auto;
+}
+
+
+.graphic-design {
+    @include container($max-width: 354px, $padding: 1.5rem, $border-radius: 8px);
+    grid-column: 1 / span 4;
+    grid-row: 1 / 3;
+}
+
+.grid-item-small {
+    @include container($max-width: 164px, $padding: 1rem 1rem, $border-radius: 8px);
+    grid-column: span 2;
+}
+
+.ui-ux {
+    grid-column: 5 / span 2;
+    grid-row: 1 / 2;
+}
+
+.apps {
+    grid-column: 7 / span 2;
+    grid-row: 1 / 2;
+}
+
+.grid-item-medium {
+    @include container($max-width: 354px, $padding: 1.5rem, $border-radius: 8px);
+    grid-column: span 4;
+}
+
+.photography {
+    grid-column: 9 / span 4;
+    grid-row: 1 / 2;
+}
+
+.illustrations {
+    grid-colum: 5 / span 4;
+    grid-row: 2 / 3;
+}
+
+.motion-graphics {
+    grid-column: 9 / span 4;
+    grid-row: 2 / 3;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        @include container($max-width: 820px, $margin: 0 auto, $padding: 2rem 1rem);
+    }
+
+    .hero-text h1 {
+        font-size: $fs-44px;
+    }
+
+    .hero-text p {
+        max-width: 573px;
+    }
+
+    .hero-grid {
+        @include container($max-width: 820px, $margin: 0 auto);
+        @include grid($grid-template-columns: repeat(12, 1fr), $grid-gap: 1.5rem);
+    }
+
+    .graphic-design {
+        grid-column: 1 / span 6;
+        grid-row: 1 / 3;
+    }
+
+    .grid-item-small {
+        grid-column: span 3;
+    }
+
+    .ui-ux {
+        grid-column: 7 / span 3;
+        grid-row: 1 / 2;
+    }
+
+    .apps {
+        grid-column: 10 / span 3;
+        grid-row: 1 / 2;
+    }
+
+    .grid-item-medium {
+        grid-column: span 6;
+    }
+
+    .photography {
+        grid-column: 1 / span 6;
+        grid-row: 3 / 4;
+    }
+
+    .illustrations {
+        grid-column: 7 / span 6;
+        grid-row: 2 / 3;
+    }
+
+    .motion-graphics {
+        grid-column: 7 / span 6;
+        grid-row: 3 / 4;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        @include container($max-width: 575px, $margin: 0 auto, $padding: 2rem 1rem);
+    }
+
+    .header {
+        @include container($max-width: 575px, $margin: 0 auto);
+    }
+
+    .header button {
+        @include button($background-color: $black, $padding: 0.875rem 1.8125rem, $border-radius: 28px);
+        font-size: $fs-14px;
+    }
+
+    .header img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hero-text {
+        margin-top: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: $fs-36px;
+        margin-bottom: -1rem;
+    }
+
+    .hero-text p {
+        font-size: $fs-18px;
+        max-width: 400px;
+        padding: 1rem;
+        margin-bottom: -3rem;
+    }
+
+    .hero-grid {
+        @include container($max-width: 355px, $margin: 0 auto);
+        @include grid($grid-template-columns: repeat(6, 1fr), $grid-gap: 1.5rem);
+    }
+
+    .graphic-design {
+        grid-column: 1 / span 6;
+        grid-row: 1 / 3;
+    }
+
+    .grid-item-small {
+        grid-column: span 3;
+    }
+
+    .ui-ux {
+        grid-column: 1 / span 3;
+        grid-row: 3 / 4;
+    }
+
+    .apps {
+        grid-column: 4 / span 3;
+        grid-row: 3 / 4;
+    }
+
+    .grid-item-medium {
+        grid-column: span 6;
+    }
+
+    .photography {
+        grid-column: 1 / span 6;
+        grid-row: 4 / 5;
+    }
+
+    .illustrations {
+        grid-column: 1 / span 6;
+        grid-row: 5 / 6;
+    }
+
+    .motion-graphics {
+        grid-column: 1 / span 6;
+        grid-row: 6 / 7;
+    }
+}
+

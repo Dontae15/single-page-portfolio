@@ -1,0 +1,52 @@
+@use '../abstracts/helpers' as *;
+
+.consultation-text {
+    @include container($max-width: 540px);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: 1rem);
+}
+
+.consultation button {
+    @include button($background-color: $light-red, $padding: 1.175rem 2.8125rem, $border-radius: 28px);
+    @include text($color: $light-cream, $font-size: $fs-18px, $font-weight: $fw-700);
+}
+
+.consultation button:hover {
+    background-color: $summer-yellow;
+    cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+    .consultation {
+        @include container($max-width: 800px, $margin: 0 auto, $padding: 3rem 1rem, $border-radius: 10px);
+        @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 2rem);
+        margin-inline: 1rem;
+    }
+
+    .consultation-text {
+        @include container($max-width: 540px, $margin: 0 auto);
+        @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 1.5rem);
+    }
+
+    .consultation-text h2 {
+        max-width: 540px;
+        font-size: $fs-32px;
+    }
+
+    .consultation-text{
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .consultation-text h2 {
+        font-size: $fs-26px;
+    }
+
+    .consultation-text p {
+        font-size: $fs-16px;
+    }
+
+    .consultation button {
+        font-size: $fs-14px;
+    }
+}

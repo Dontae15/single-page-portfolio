@@ -1,0 +1,65 @@
+@use '../abstracts/helpers' as *;
+
+.cta img {
+    width: 410px;
+    height: 425px;
+}
+
+.cta-text {
+    @include container($max-width: 540px);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: 1.5rem);
+}
+
+.cta-text button {
+    @include button($background-color: $light-red, $padding: 1.175rem 2.8125rem, $border-radius: 28px);
+    @include text($color: $light-cream, $font-size: $fs-18px, $font-weight: $fw-700);
+}
+
+.cta-text button:hover {
+    background-color: $summer-yellow;
+    cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+    .cta {
+        @include container($max-width: 1000px, $margin: 0 auto, $padding: 2rem 1rem);
+    }
+
+    .cta img {
+        width: 364px;
+        height: 364px;
+    }
+
+    .cta-text {
+        @include container($max-width: 370px);
+    }
+
+    .cta-text h2 {
+        @include text($color: $black, $font-size: $fs-32px, $font-weight: $fw-700);
+    }
+}
+
+@media (max-width: 800px) {
+    .cta {
+        @include container($max-width: 650px, $margin: 0 auto, $padding: 2rem 1rem);
+        @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 2.5rem);
+    }
+
+    .cta-text {
+        @include container($max-width: 450px);
+        @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: 1.5rem);
+        text-align: center;
+    }
+
+    .cta-text h2 {
+        @include text($color: $black, $font-size: $fs-26px, $font-weight: $fw-700);
+    }
+
+}
+
+@media (max-width: 415px) {
+    .cta img {
+        width: 350px;
+        height: 340px;
+    }
+}

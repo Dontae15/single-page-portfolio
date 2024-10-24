@@ -1,0 +1,49 @@
+@use '../abstracts/helpers' as *;
+
+.list-img {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 450px;
+}
+
+.carousel-container {
+    @include container($max-width: 1400px, $margin: 0 auto, $padding: 2rem 0rem);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: center);
+    overflow: hidden;
+}
+
+.img-list { 
+    width: max-content; // Ensures the width of the container is based on the content inside it
+    display: flex; // Ensures the items are in a row
+    gap: 1.875rem; // Space between images
+    scroll-behavior: smooth;
+    overflow-x: auto; // Horizontal scrolling
+    scroll-snap-type: x mandatory;
+    white-space: nowrap; // Prevents wrapping of images
+}
+
+
+.carousel-btns {
+    @include container($max-width: 500px, $margin: 0 auto);
+    @include flex($flex-direction: row, $gap: 1.875rem);
+}
+
+.carousel-btn {
+    @include button($background-color: $black, $padding: 1rem, $border-radius: 28px);
+}
+
+.carousel-btn:hover {
+    background-color: $galactic-blue;
+    cursor: pointer;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.img-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .img-list {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

@@ -1,0 +1,29 @@
+@use '../abstracts/helpers' as *;
+
+
+footer {
+    @include container($max-width: 1111px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+    padding: 2rem 1rem;
+}
+
+footer button {
+    @include button($padding: 0.875rem 2.8125rem, $border-radius: 28px);
+}
+
+footer button:hover {
+    background-color: $galactic-blue;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    footer img {
+        width: 48px;
+        height: 48px;
+    }
+
+    footer button {
+        @include button($padding: 0.65rem 2rem, $border-radius: 28px);
+    }
+
+}
